@@ -1,0 +1,5 @@
+== RxJava Osgi
+
+This project is used to create a p2 update site for RxJava, which can be found here: https://dl.bintray.com/simon-scholz/RxJava-OSGi/
+
+image::rxjava-update-site.png[]
