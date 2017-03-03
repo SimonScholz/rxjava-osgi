@@ -11,6 +11,9 @@ apply plugin: 'org.standardout.bnd-platform'
 
 repositories {
 	jcenter()
+	maven {
+		url 'https://dl.bintray.com/simon-scholz/RxJava-Extensions/'
+	}
 }
 
 platform {
@@ -19,12 +22,12 @@ platform {
 	eclipseHome = new File('/home/simon/eclipse/eclipse-baseline')
 
 	// configure proper names for the p2 update site
-	categoryId = 'RxJava'
-	categoryName = 'RxJava'
+	categoryId = 'RxJava-OSGi-Libs'
+	categoryName = 'RxJava OSGi Libs'
 
-	featureId = 'RxJava'
-	featureName = 'RxJava osgi'
-	featureVersion = '2.0.4'
+	featureId = 'RxJava-OSGi-Libs'
+	featureName = 'RxJava OSGi Libs'
+	featureVersion = '2.0.6'
 	featureProvider = 'Simon Scholz'
 
 	defaultQualifier = ''
@@ -32,9 +35,27 @@ platform {
 	useFeatureHashQualifiers = false
 	defaultQualifierMap.prefix = ''
 
-	bundle('io.reactivex.rxjava2:rxjava:2.0.4')
+	bundle('io.reactivex.swt:rxswt:0.1.0') {
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.ppc64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.win32.win32.x86_64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.win32.win32.x86'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.s390'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.aarch64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.x86_64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.aix.ppc'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.aix.ppc64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.solaris.x86_64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.ppc64le'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.cocoa.macosx.x86_64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.solaris.sparcv9'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.ppc'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.hpux.ia64'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.x86'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.arm'
+		 exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.s390x'
+	}
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '3.3'
+	gradleVersion = '3.4'
 }
