@@ -110,8 +110,9 @@
       <feature id="org.eclipse.e4.rcp" version="1.5.2.v20161122-1740"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
-      <feature id="rxjava_feature" version="1.0.0.qualifier"/>
-      <feature id="RxJava" version="2.0.4"/>
+      <feature id="org.eclipse.nebula.widgets.nattable.core.feature" version="1.4.0.201606011907"/>
+      <feature id="rxjava_sample_feature" version="1.0.0.qualifier"/>
+      <feature id="All-RxJava-OSGi-Libs" version="0.1.0"/>
    </features>
 
    <configurations>
