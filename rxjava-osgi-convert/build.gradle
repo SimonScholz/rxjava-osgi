@@ -1,9 +1,12 @@
 buildscript {
 	repositories {
-		mavenCentral()
+		jcenter()
+	    maven {
+      		url 'http://oss.sonatype.org/content/repositories/snapshots/'
+    	}
 	}
 	dependencies {
-		classpath 'org.standardout:bnd-platform:1.5.0'
+		classpath 'org.standardout:bnd-platform:1.7.0-SNAPSHOT'
 	}
 }
 
@@ -18,8 +21,7 @@ repositories {
 
 platform {
 
-	// Set a proper path to your eclipse installation (necessary for building a p2 updatesite)
-	eclipseHome = new File('/home/simon/eclipse/eclipse-baseline')
+	eclipseMirror = 'http://dl.bintray.com/simon-scholz/eclipse-apps/eclipse-p2-minimal.tar.gz'
 
 	// configure proper names for the p2 update site
 	categoryId = 'RxJava-OSGi-Libs'
